@@ -7,7 +7,7 @@
  */
 (async function init() {
   try {
-    const response = await fetch('data.json');
+    const response = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     
     const data = await response.json();
@@ -22,6 +22,7 @@
     requestAnimationFrame(() => {
       initScrollReveal();
       initNavHighlight();
+      initAdmin();
     });
 
   } catch (error) {

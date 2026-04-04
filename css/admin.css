@@ -1,0 +1,306 @@
+/* ═══════════════════════════════════════════
+   admin.css — Admin Panel Styles (v1.1)
+   ═══════════════════════════════════════════ */
+
+/* ─── Toolbar ─── */
+.admin-toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  background: linear-gradient(135deg, #0d1a0f, #0a0a0a);
+  border-bottom: 1px solid var(--green-dim);
+  padding: 0 24px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 13px;
+  box-shadow: 0 2px 20px rgba(0, 232, 94, 0.08);
+}
+
+.admin-toolbar-badge {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 1px;
+}
+
+.admin-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-toolbar-actions button,
+.admin-toolbar-import {
+  padding: 5px 14px;
+  background: transparent;
+  border: 1px solid #ffffff15;
+  border-radius: 6px;
+  color: var(--text2);
+  font-size: 12px;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-toolbar-actions button:hover,
+.admin-toolbar-import:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+/* Push header and hero down when toolbar is visible */
+.admin-mode header {
+  top: 44px;
+}
+.admin-mode #hero {
+  padding-top: 108px; /* 64px header + 44px toolbar */
+}
+
+/* ─── Overlay (shared by password & form modals) ─── */
+.admin-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  z-index: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s;
+}
+.admin-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ─── Modal ─── */
+.admin-modal {
+  background: var(--bg2);
+  border: 1px solid #ffffff10;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 520px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 32px;
+  transform: translateY(16px);
+  transition: transform 0.25s;
+}
+.admin-overlay.active .admin-modal {
+  transform: translateY(0);
+}
+
+.admin-modal-sm {
+  max-width: 380px;
+}
+
+.admin-modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+/* ─── Form fields ─── */
+.admin-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.admin-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.admin-field label {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--text3);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.admin-field input,
+.admin-field textarea,
+.admin-field select {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg3);
+  border: 1px solid #ffffff10;
+  border-radius: 8px;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.admin-field input:focus,
+.admin-field textarea:focus,
+.admin-field select:focus {
+  border-color: var(--green);
+}
+
+.admin-field textarea {
+  min-height: 80px;
+  resize: vertical;
+  line-height: 1.5;
+}
+
+.admin-field select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' viewBox='0 0 10 6' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%23999' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+.admin-field input::placeholder,
+.admin-field textarea::placeholder {
+  color: var(--text3);
+}
+
+/* ─── Error ─── */
+.admin-error {
+  font-size: 13px;
+  color: #ff4444;
+  min-height: 20px;
+  margin-top: 4px;
+}
+
+/* ─── Form action buttons ─── */
+.admin-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.admin-btn-save {
+  padding: 10px 24px;
+  background: var(--green);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.2s;
+}
+.admin-btn-save:hover {
+  box-shadow: 0 0 20px var(--green-dim);
+}
+
+.admin-btn-cancel {
+  padding: 10px 20px;
+  background: transparent;
+  border: 1px solid #ffffff15;
+  border-radius: 8px;
+  color: var(--text2);
+  font-size: 14px;
+  cursor: pointer;
+  font-family: var(--sans);
+  transition: all 0.2s;
+}
+.admin-btn-cancel:hover {
+  border-color: var(--text2);
+}
+
+/* ─── Add buttons (in sections) ─── */
+.admin-btn {
+  display: none;
+  padding: 12px 20px;
+  background: var(--bg3);
+  border: 1px dashed var(--green-dim);
+  border-radius: 10px;
+  color: var(--green);
+  font-size: 13px;
+  font-family: var(--mono);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+  width: 100%;
+}
+.admin-mode .admin-btn {
+  display: block;
+}
+.admin-btn:hover {
+  background: var(--green-dim);
+  border-color: var(--green);
+}
+
+/* ─── Card edit/delete actions ─── */
+.admin-card-actions {
+  display: none;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  gap: 4px;
+  z-index: 10;
+}
+.admin-mode .admin-card-actions {
+  display: flex;
+}
+
+.admin-card-actions button {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #ffffff15;
+  background: var(--bg2);
+  color: var(--text2);
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+.admin-card-actions button:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+.admin-card-actions button.delete:hover {
+  border-color: #ff4444;
+  color: #ff4444;
+}
+
+/* ─── Scrollbar for admin modal ─── */
+.admin-modal::-webkit-scrollbar { width: 4px; }
+.admin-modal::-webkit-scrollbar-track { background: transparent; }
+.admin-modal::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 2px; }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  .admin-toolbar {
+    flex-direction: column;
+    height: auto;
+    padding: 8px 16px;
+    gap: 6px;
+  }
+  .admin-toolbar-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .admin-mode header {
+    top: 64px;
+  }
+  .admin-mode #hero {
+    padding-top: 128px;
+  }
+  .admin-modal {
+    padding: 20px;
+  }
+}

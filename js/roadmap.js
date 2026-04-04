@@ -58,8 +58,8 @@ function renderRoadmap(roadmapData) {
 
   // Grid lines
   months.forEach((m, i) => {
-    const leftPercent = (i / totalMonths) * 100;
-    html += `<div class="gantt-grid-line" style="left:calc(200px + ${leftPercent}% * (100% - 200px) / 100)"></div>`;
+    const frac = i / totalMonths;
+    html += `<div class="gantt-grid-line" style="left:calc(var(--label-w) + (100% - var(--label-w)) * ${frac})"></div>`;
   });
 
   // Rows
@@ -94,7 +94,8 @@ function renderRoadmap(roadmapData) {
 
   // Today line
   if (todayFraction !== null) {
-    html += `<div class="gantt-today" style="left:calc(200px + ${todayFraction}% * (100% - 200px) / 100)"></div>`;
+    const frac = todayFraction / 100;
+    html += `<div class="gantt-today" style="left:calc(var(--label-w) + (100% - var(--label-w)) * ${frac})"></div>`;
   }
 
   html += '</div>'; // gantt-body
