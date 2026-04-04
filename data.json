@@ -1,0 +1,252 @@
+{
+  "meta": {
+    "tagline": "Команда разработки",
+    "headline": "Создаём цифровые продукты, которые <em>работают</em>",
+    "subtitle": "Команда full-cycle разработки внутри X5 Tech. Проектируем, строим и поддерживаем сервисы, которые ежедневно используют тысячи сотрудников.",
+    "metrics": [
+      { "value": "8", "label": "Разработчиков" },
+      { "value": "6", "label": "Проектов" },
+      { "value": "3+", "label": "Лет опыта" }
+    ]
+  },
+  "contacts": {
+    "email": "team@x5.tech",
+    "telegram": "https://t.me/x5tech"
+  },
+  "directions": [
+    {
+      "icon": "</>",
+      "title": "Веб-разработка",
+      "desc": "SPA, админки, внутренние порталы. React, Vue, TypeScript на фронте."
+    },
+    {
+      "icon": "{ }",
+      "title": "Бэкенд и API",
+      "desc": "Микросервисы, REST/gRPC API, высоконагруженные системы на Go и Python."
+    },
+    {
+      "icon": "⛁",
+      "title": "Данные и аналитика",
+      "desc": "ETL-пайплайны, дашборды, интеграции с корпоративными хранилищами."
+    },
+    {
+      "icon": "☁",
+      "title": "DevOps и инфраструктура",
+      "desc": "CI/CD, Kubernetes, мониторинг. Автоматизируем всё, что можно."
+    }
+  ],
+  "techStack": [
+    "React", "TypeScript", "Vue.js", "Go", "Python",
+    "PostgreSQL", "Redis", "Kafka", "Kubernetes", "Docker",
+    "GitLab CI", "Grafana", "ClickHouse", "Airflow"
+  ],
+  "team": [
+    {
+      "name": "Алексей Петров",
+      "role": "Team Lead",
+      "photo": "https://randomuser.me/api/portraits/men/32.jpg",
+      "bio": "Руководит командой разработки. 10 лет в IT, из них 4 года в X5. Отвечает за архитектурные решения, code review и развитие команды.",
+      "skills": ["Go", "System Design", "Kubernetes", "Leadership"],
+      "contacts": [
+        { "type": "email", "value": "a.petrov@x5.tech" },
+        { "type": "telegram", "value": "@apetrov" }
+      ]
+    },
+    {
+      "name": "Мария Козлова",
+      "role": "Frontend Lead",
+      "photo": "https://randomuser.me/api/portraits/women/44.jpg",
+      "bio": "Ведёт фронтенд-направление. Специализируется на сложных SPA с высокими требованиями к UX. Внедрила дизайн-систему компании.",
+      "skills": ["React", "TypeScript", "Vue.js", "Design Systems"],
+      "contacts": [
+        { "type": "email", "value": "m.kozlova@x5.tech" },
+        { "type": "telegram", "value": "@mkozlova" }
+      ]
+    },
+    {
+      "name": "Дмитрий Волков",
+      "role": "Backend Developer",
+      "photo": "https://randomuser.me/api/portraits/men/75.jpg",
+      "bio": "Разрабатывает высоконагруженные сервисы на Go. Эксперт по оптимизации и профилированию. Автор внутренней библиотеки для работы с Kafka.",
+      "skills": ["Go", "PostgreSQL", "Kafka", "gRPC"],
+      "contacts": [
+        { "type": "email", "value": "d.volkov@x5.tech" },
+        { "type": "telegram", "value": "@dvolkov" }
+      ]
+    },
+    {
+      "name": "Анна Сидорова",
+      "role": "Frontend Developer",
+      "photo": "https://randomuser.me/api/portraits/women/68.jpg",
+      "bio": "Создаёт интерфейсы для внутренних порталов и админок. Фокус на доступности и производительности. Активно развивает компонентную библиотеку.",
+      "skills": ["React", "TypeScript", "CSS", "Accessibility"],
+      "contacts": [
+        { "type": "email", "value": "a.sidorova@x5.tech" },
+        { "type": "telegram", "value": "@asidorova" }
+      ]
+    },
+    {
+      "name": "Игорь Чернов",
+      "role": "Backend Developer",
+      "photo": "https://randomuser.me/api/portraits/men/22.jpg",
+      "bio": "Пишет микросервисы на Python и Go. Отвечает за интеграции с внешними системами и API Gateway. Увлекается функциональным программированием.",
+      "skills": ["Python", "Go", "REST API", "Docker"],
+      "contacts": [
+        { "type": "email", "value": "i.chernov@x5.tech" },
+        { "type": "telegram", "value": "@ichernov" }
+      ]
+    },
+    {
+      "name": "Елена Морозова",
+      "role": "Data Engineer",
+      "photo": "https://randomuser.me/api/portraits/women/55.jpg",
+      "bio": "Строит ETL-пайплайны и аналитические дашборды. Работает с ClickHouse и Airflow. Помогает бизнесу принимать решения на основе данных.",
+      "skills": ["Python", "ClickHouse", "Airflow", "SQL"],
+      "contacts": [
+        { "type": "email", "value": "e.morozova@x5.tech" },
+        { "type": "telegram", "value": "@emorozova" }
+      ]
+    },
+    {
+      "name": "Артём Новиков",
+      "role": "DevOps Engineer",
+      "photo": "https://randomuser.me/api/portraits/men/45.jpg",
+      "bio": "Отвечает за CI/CD, инфраструктуру и мониторинг. Перевёл все сервисы команды на Kubernetes. Автоматизирует рутинные процессы.",
+      "skills": ["Kubernetes", "Terraform", "GitLab CI", "Grafana"],
+      "contacts": [
+        { "type": "email", "value": "a.novikov@x5.tech" },
+        { "type": "telegram", "value": "@anovikov" }
+      ]
+    },
+    {
+      "name": "Ольга Белова",
+      "role": "QA Engineer",
+      "photo": "https://randomuser.me/api/portraits/women/33.jpg",
+      "bio": "Обеспечивает качество продуктов команды. Пишет автотесты, проводит нагрузочное тестирование. Внедрила практику shift-left testing.",
+      "skills": ["Playwright", "Python", "k6", "Test Strategy"],
+      "contacts": [
+        { "type": "email", "value": "o.belova@x5.tech" },
+        { "type": "telegram", "value": "@obelova" }
+      ]
+    }
+  ],
+  "projects": [
+    {
+      "tag": "Портал",
+      "title": "Внутренний портал сотрудника",
+      "desc": "Единая точка входа для HR-сервисов, заявок и корпоративных новостей.",
+      "cover": "",
+      "stack": ["React", "TypeScript", "Go", "PostgreSQL"],
+      "task": "Заменить разрозненные системы единым порталом с SSO.",
+      "result": "12 000+ активных пользователей ежемесячно. Время обработки заявок сократилось на 40%.",
+      "pattern": "portal"
+    },
+    {
+      "tag": "Логистика",
+      "title": "Система управления доставкой",
+      "desc": "Real-time трекинг маршрутов, оптимизация логистики, аналитика эффективности.",
+      "cover": "",
+      "stack": ["Vue.js", "Go", "Kafka", "ClickHouse"],
+      "task": "Дать логистам инструмент для мониторинга доставок в реальном времени.",
+      "result": "Снижение времени доставки на 18%. Прозрачная аналитика по каждому складу.",
+      "pattern": "logistics"
+    },
+    {
+      "tag": "API",
+      "title": "API Gateway",
+      "desc": "Централизованный шлюз для всех внутренних API с авторизацией и rate limiting.",
+      "cover": "",
+      "stack": ["Go", "gRPC", "Redis", "Kubernetes"],
+      "task": "Унифицировать доступ к 50+ внутренним API через единый шлюз.",
+      "result": "Latency p99 < 15ms. 99.99% uptime за последний год.",
+      "pattern": "api"
+    },
+    {
+      "tag": "Аналитика",
+      "title": "BI-платформа",
+      "desc": "Кастомные дашборды и отчёты для бизнес-подразделений на основе корпоративных данных.",
+      "cover": "",
+      "stack": ["Python", "ClickHouse", "Airflow", "React"],
+      "task": "Автоматизировать ручную выгрузку данных и формирование отчётов.",
+      "result": "200+ автоматических отчётов. Экономия 120 человеко-часов в месяц.",
+      "pattern": "bi"
+    },
+    {
+      "tag": "Автоматизация",
+      "title": "CI/CD платформа",
+      "desc": "Внутренняя платформа для автоматизации сборки, тестирования и деплоя сервисов.",
+      "cover": "",
+      "stack": ["GitLab CI", "Kubernetes", "Terraform", "Go"],
+      "task": "Ускорить цикл релизов и стандартизировать деплой для всех команд.",
+      "result": "Время от коммита до прода сократилось с 2 дней до 30 минут.",
+      "pattern": "cicd"
+    },
+    {
+      "tag": "Интеграции",
+      "title": "Шина интеграций",
+      "desc": "Event-driven платформа для обмена данными между корпоративными системами.",
+      "cover": "",
+      "stack": ["Kafka", "Go", "Python", "Docker"],
+      "task": "Заменить point-to-point интеграции масштабируемой event-driven архитектурой.",
+      "result": "Обрабатываем 500K+ событий в минуту. Подключено 30+ систем.",
+      "pattern": "integration"
+    }
+  ],
+  "roadmap": [
+    {
+      "name": "API Gateway v2",
+      "start": "2026-03",
+      "end": "2026-07",
+      "status": "in_progress",
+      "owner": "Дмитрий Волков",
+      "description": "Миграция на новую версию шлюза с поддержкой WebSocket"
+    },
+    {
+      "name": "Портал сотрудника 3.0",
+      "start": "2026-01",
+      "end": "2026-05",
+      "status": "in_progress",
+      "owner": "Мария Козлова",
+      "description": "Редизайн портала, мобильная версия, новые виджеты"
+    },
+    {
+      "name": "ML-рекомендации для логистики",
+      "start": "2026-06",
+      "end": "2026-10",
+      "status": "planned",
+      "owner": "Елена Морозова",
+      "description": "Модель прогнозирования оптимальных маршрутов доставки"
+    },
+    {
+      "name": "Миграция на K8s v2",
+      "start": "2026-02",
+      "end": "2026-04",
+      "status": "done",
+      "owner": "Артём Новиков",
+      "description": "Переход кластера на обновлённую версию Kubernetes"
+    },
+    {
+      "name": "Единый дашборд мониторинга",
+      "start": "2026-05",
+      "end": "2026-08",
+      "status": "planned",
+      "owner": "Артём Новиков",
+      "description": "Консолидация всех метрик в одном Grafana-дашборде"
+    }
+  ],
+  "process": [
+    { "title": "Заявка", "desc": "Опишите задачу или идею — письмо, сообщение, звонок." },
+    { "title": "Обсуждение", "desc": "Проводим встречу, уточняем требования, формируем ТЗ." },
+    { "title": "Оценка", "desc": "Декомпозируем задачи, согласуем сроки и приоритеты." },
+    { "title": "Разработка", "desc": "Итерации по 2 недели. Демо после каждого спринта." },
+    { "title": "Поддержка", "desc": "Мониторинг, баг-фиксы, доработки. Мы всегда на связи." }
+  ],
+  "faq": [
+    { "q": "Нужен внутренний сервис или портал", "a": "Мы создаём веб-приложения любой сложности — от простых CRUD-админок до высоконагруженных порталов с тысячами пользователей. Расскажите, что нужно, и мы предложим архитектуру." },
+    { "q": "Нужно интегрировать несколько систем", "a": "У нас есть опыт интеграции с SAP, 1C, корпоративными хранилищами данных и десятками внутренних API. Работаем как с REST, так и с event-driven подходами." },
+    { "q": "Хочу автоматизировать ручной процесс", "a": "Анализируем текущий процесс, находим узкие места и предлагаем решение — от простых скриптов до полноценных платформ автоматизации." },
+    { "q": "Нужна консультация по архитектуре", "a": "Поможем спроектировать архитектуру нового сервиса, провести аудит существующего решения или выбрать технологический стек. Можно начать с короткого звонка." },
+    { "q": "Нужна аналитика и дашборды", "a": "Построим ETL-пайплайн, подключим нужные источники данных и создадим интерактивные дашборды. Работаем с ClickHouse, Grafana и собственными решениями на React." },
+    { "q": "Хочу ускорить релизный цикл", "a": "Настроим CI/CD, внедрим автотесты, перенесём сервисы в Kubernetes. Наша цель — чтобы от коммита до прода проходили минуты, а не дни." }
+  ]
+}

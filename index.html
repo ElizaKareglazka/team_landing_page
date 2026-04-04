@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>X5 Tech — Команда разработки</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/sections.css">
+  <link rel="stylesheet" href="css/roadmap.css">
+  <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="header-inner">
+      <div class="logo" id="logo">X5 <span>Tech</span></div>
+      <nav id="mainNav">
+        <a href="#about">О нас</a>
+        <a href="#team">Команда</a>
+        <a href="#projects">Проекты</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#process">Процесс</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-tag" id="heroTag"></div>
+    <h1 class="hero-h1" id="heroHeadline"></h1>
+    <p class="hero-sub" id="heroSubtitle"></p>
+    <div class="hero-metrics" id="heroMetrics"></div>
+    <div class="hero-cta" id="heroCta"></div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="reveal">
+      <div class="section-label">О команде</div>
+      <h2 class="section-title">Чем мы занимаемся</h2>
+      <p class="section-desc">Разрабатываем внутренние продукты и сервисы для экосистемы X5. От идеи до продакшена — полный цикл.</p>
+    </div>
+    <div class="about-grid" id="aboutGrid"></div>
+  </section>
+
+  <!-- Tech Stack -->
+  <section id="stack">
+    <div class="reveal">
+      <div class="section-label">Технологии</div>
+      <h2 class="section-title">Наш стек</h2>
+    </div>
+    <div class="tech-scroll reveal">
+      <div class="tech-track" id="techTrack"></div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team">
+    <div class="reveal">
+      <div class="section-label">Участники</div>
+      <h2 class="section-title">Наша команда</h2>
+      <p class="section-desc">Нажмите на карточку, чтобы узнать подробнее о сотруднике.</p>
+    </div>
+    <div class="team-grid" id="teamGrid"></div>
+  </section>
+
+  <!-- Team Member Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">✕</button>
+      <div class="modal-header">
+        <div class="modal-photo" id="modalPhoto"></div>
+        <div>
+          <div class="modal-name" id="modalName"></div>
+          <div class="modal-role" id="modalRole"></div>
+        </div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">О сотруднике</div>
+        <p id="modalBio"></p>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Навыки</div>
+        <div class="modal-tags" id="modalTags"></div>
+      </div>
+      <div class="modal-section">
+        <div class="modal-section-title">Контакты</div>
+        <div class="modal-contacts" id="modalContacts"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="reveal">
+      <div class="section-label">Портфолио</div>
+      <h2 class="section-title">Наши проекты</h2>
+      <p class="section-desc">Ключевые продукты, которые мы создали и поддерживаем.</p>
+    </div>
+    <div class="projects-grid" id="projectsGrid"></div>
+  </section>
+
+  <!-- Roadmap -->
+  <section id="roadmap">
+    <div class="reveal">
+      <div class="section-label">Roadmap</div>
+      <h2 class="section-title">План работ</h2>
+      <p class="section-desc">Текущие и запланированные проекты команды.</p>
+    </div>
+    <div class="gantt reveal" id="ganttContainer"></div>
+    <div class="gantt-scroll-hint">← свайпните для прокрутки →</div>
+    <div class="gantt-legend">
+      <div class="gantt-legend-item"><span class="gantt-legend-swatch in_progress"></span>В работе</div>
+      <div class="gantt-legend-item"><span class="gantt-legend-swatch done"></span>Завершён</div>
+      <div class="gantt-legend-item"><span class="gantt-legend-swatch planned"></span>Запланирован</div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process">
+    <div class="reveal">
+      <div class="section-label">Процесс</div>
+      <h2 class="section-title">Как мы работаем</h2>
+      <p class="section-desc">От первого обращения до готового продукта — 5 прозрачных шагов.</p>
+    </div>
+    <div class="process-timeline reveal" id="processTimeline"></div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="reveal">
+      <div class="section-label">Вопросы</div>
+      <h2 class="section-title">С чем к нам прийти</h2>
+    </div>
+    <div class="faq-list reveal" id="faqList"></div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner" id="footerContent"></div>
+  </footer>
+
+  <!-- Tooltip (for Gantt) -->
+  <div class="gantt-tooltip" id="ganttTooltip">
+    <div class="gantt-tooltip-name" id="tooltipName"></div>
+    <div class="gantt-tooltip-meta" id="tooltipMeta"></div>
+    <div class="gantt-tooltip-desc" id="tooltipDesc"></div>
+    <div class="gantt-tooltip-owner" id="tooltipOwner"></div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/utils.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/roadmap.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

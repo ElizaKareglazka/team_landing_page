@@ -1,0 +1,130 @@
+/* ═══════════════════════════════════════════
+   main.css — Variables, Reset, Base Styles
+   ═══════════════════════════════════════════ */
+
+/* ─── CSS Variables ─── */
+:root {
+  --bg: #050505;
+  --bg2: #0a0a0a;
+  --bg3: #111111;
+  --bg4: #1a1a1a;
+  --green: #00e85e;
+  --green-dim: #00e85e33;
+  --green-glow: #00e85e22;
+  --text: #f0f0f0;
+  --text2: #999;
+  --text3: #555;
+  --mono: 'JetBrains Mono', monospace;
+  --sans: 'Manrope', sans-serif;
+}
+
+/* ─── Reset ─── */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bg);
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--text);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--green);
+  color: var(--bg);
+}
+
+/* ─── Noise Overlay ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--green); }
+
+/* ─── Base Elements ─── */
+a {
+  color: var(--green);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+a:hover { opacity: 0.8; }
+
+/* ─── Section Layout ─── */
+section {
+  padding: 120px 40px 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--green);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--green);
+}
+
+.section-title {
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+}
+
+.section-desc {
+  color: var(--text2);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 600px;
+}
+
+/* ─── Animations ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: all 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ─── Responsive ─── */
+@media (max-width: 768px) {
+  section {
+    padding: 80px 20px 60px;
+  }
+}
