@@ -13,7 +13,7 @@
   font-weight: 700;
   font-size: 14px;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.25s;
   font-family: var(--sans);
@@ -30,11 +30,11 @@
   align-items: center;
   gap: 8px;
   padding: 14px 24px;
-  border: 1px solid #ffffff15;
+  border: 1px solid var(--border);
   color: var(--text2);
   font-weight: 500;
   font-size: 14px;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
   transition: all 0.25s;
   background: transparent;
@@ -54,8 +54,8 @@ header {
   z-index: 100;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(5, 5, 5, 0.8);
-  border-bottom: 1px solid #ffffff08;
+  background: rgba(28, 28, 28, 0.85);
+  border-bottom: 1px solid var(--border-subtle);
 }
 .header-inner {
   max-width: 1200px;
@@ -100,7 +100,7 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .about-card {
   background: var(--bg3);
-  border: 1px solid #ffffff08;
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 32px 28px;
   transition: all 0.3s;
@@ -160,7 +160,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   flex-shrink: 0;
   padding: 16px 28px;
   background: var(--bg3);
-  border: 1px solid #ffffff08;
+  border: 1px solid var(--border-subtle);
   border-radius: 10px;
   font-family: var(--mono);
   font-size: 13px;
@@ -189,7 +189,7 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .team-card {
   background: var(--bg3);
-  border: 1px solid #ffffff08;
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
   padding: 24px 20px;
   text-align: center;
@@ -208,7 +208,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   border-radius: 50%;
   margin: 0 auto 16px;
   overflow: hidden;
-  border: 2px solid #ffffff10;
+  border: 2px solid var(--border);
   transition: border-color 0.3s;
 }
 .team-card:hover .team-card-photo { border-color: var(--green); }
@@ -272,7 +272,7 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .modal {
   background: var(--bg2);
-  border: 1px solid #ffffff10;
+  border: 1px solid var(--border);
   border-radius: 16px;
   max-width: 560px;
   width: 100%;
@@ -290,7 +290,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   width: 32px;
   height: 32px;
   border-radius: 8px;
-  border: 1px solid #ffffff10;
+  border: 1px solid var(--border);
   background: transparent;
   color: var(--text2);
   font-size: 18px;
@@ -361,7 +361,7 @@ nav a:hover { color: var(--green); opacity: 1; }
 .modal-contacts { display: flex; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
 .modal-contact {
   padding: 8px 16px;
-  border: 1px solid #ffffff10;
+  border: 1px solid var(--border);
   border-radius: 8px;
   font-size: 13px;
   color: var(--text2);
@@ -381,7 +381,7 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .project-card {
   background: var(--bg3);
-  border: 1px solid #ffffff08;
+  border: 1px solid var(--border-subtle);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
@@ -449,7 +449,7 @@ nav a:hover { color: var(--green); opacity: 1; }
 .project-card.expanded .project-detail { max-height: 300px; }
 .project-detail-inner {
   padding: 0 24px 24px;
-  border-top: 1px solid #ffffff08;
+  border-top: 1px solid var(--border-subtle);
   padding-top: 16px;
 }
 .project-detail-inner h4 {
@@ -468,13 +468,13 @@ nav a:hover { color: var(--green); opacity: 1; }
 /* ─── FAQ Accordion ─── */
 .faq-list { margin-top: 32px; max-width: 720px; }
 .faq-item {
-  border: 1px solid #ffffff08;
+  border: 1px solid var(--border-subtle);
   border-radius: 10px;
   margin-bottom: 12px;
   overflow: hidden;
   transition: border-color 0.3s;
 }
-.faq-item:hover { border-color: #ffffff15; }
+.faq-item:hover { border-color: var(--border); }
 .faq-item.active { border-color: var(--green-dim); }
 
 .faq-q {
@@ -510,7 +510,7 @@ nav a:hover { color: var(--green); opacity: 1; }
 
 /* ─── Footer ─── */
 footer {
-  border-top: 1px solid #ffffff08;
+  border-top: 1px solid var(--border-subtle);
   padding: 40px 40px;
   margin-top: 20px;
 }
@@ -577,7 +577,7 @@ footer {
     top: 64px;
     left: 0;
     right: 0;
-    background: rgba(5, 5, 5, 0.95);
+    background: rgba(28, 28, 28, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -592,7 +592,7 @@ footer {
   nav.open {
     max-height: 400px;
     padding: 16px 0;
-    border-bottom: 1px solid #ffffff08;
+    border-bottom: 1px solid var(--border-subtle);
   }
   nav a {
     font-size: 14px;

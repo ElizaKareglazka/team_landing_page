@@ -9,7 +9,7 @@
   left: 0;
   right: 0;
   z-index: 500;
-  background: linear-gradient(135deg, #0d1a0f, #0a0a0a);
+  background: linear-gradient(135deg, #2B2B2B, #1C1C1C);
   border-bottom: 1px solid var(--green-dim);
   padding: 0 24px;
   height: 44px;
@@ -17,7 +17,7 @@
   align-items: center;
   justify-content: space-between;
   font-size: 13px;
-  box-shadow: 0 2px 20px rgba(0, 232, 94, 0.08);
+  box-shadow: 0 2px 20px rgba(149, 255, 66, 0.08);
 }
 
 .admin-toolbar-badge {
@@ -37,7 +37,7 @@
 .admin-toolbar-import {
   padding: 5px 14px;
   background: transparent;
-  border: 1px solid #ffffff15;
+  border: 1px solid var(--border);
   border-radius: 6px;
   color: var(--text2);
   font-size: 12px;
@@ -83,7 +83,7 @@
 /* ─── Modal ─── */
 .admin-modal {
   background: var(--bg2);
-  border: 1px solid #ffffff10;
+  border: 1px solid var(--border);
   border-radius: 16px;
   width: 100%;
   max-width: 520px;
@@ -134,7 +134,7 @@
   width: 100%;
   padding: 10px 14px;
   background: var(--bg3);
-  border: 1px solid #ffffff10;
+  border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text);
   font-family: var(--sans);
@@ -204,7 +204,7 @@
 .admin-btn-cancel {
   padding: 10px 20px;
   background: transparent;
-  border: 1px solid #ffffff15;
+  border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text2);
   font-size: 14px;
@@ -256,7 +256,7 @@
   width: 28px;
   height: 28px;
   border-radius: 6px;
-  border: 1px solid #ffffff15;
+  border: 1px solid var(--border);
   background: var(--bg2);
   color: var(--text2);
   font-size: 14px;

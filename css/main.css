@@ -4,18 +4,22 @@
 
 /* ─── CSS Variables ─── */
 :root {
-  --bg: #050505;
-  --bg2: #0a0a0a;
-  --bg3: #111111;
-  --bg4: #1a1a1a;
-  --green: #00e85e;
-  --green-dim: #00e85e33;
-  --green-glow: #00e85e22;
-  --text: #f0f0f0;
-  --text2: #999;
-  --text3: #555;
-  --mono: 'JetBrains Mono', monospace;
-  --sans: 'Manrope', sans-serif;
+  --bg: #1C1C1C;
+  --bg2: #2B2B2B;
+  --bg3: #2B2B2B;
+  --bg4: #363636;
+  --green: #95FF42;
+  --green-dim: rgba(149, 255, 66, 0.2);
+  --green-glow: rgba(149, 255, 66, 0.13);
+  --green-hover: #AEFF6B;
+  --text: #F0F0F0;
+  --text2: #B8B8B8;
+  --text3: #A0A0A0;
+  --border: #484848;
+  --border-subtle: #363636;
+  --text-on-brand: #1C1C1C;
+  --sans: 'Inter', sans-serif;
+  --mono: 'Inter', sans-serif;
 }
 
 /* ─── Reset ─── */

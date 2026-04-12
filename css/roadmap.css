@@ -17,7 +17,7 @@
 /* ─── Header (month labels) ─── */
 .gantt-header {
   display: flex;
-  border-bottom: 1px solid #ffffff08;
+  border-bottom: 1px solid var(--border-subtle);
   margin-left: var(--label-w);
 }
 .gantt-month {
@@ -97,7 +97,7 @@
   animation: ganttPulse 2s ease-in-out infinite;
 }
 .gantt-bar.done {
-  background: #00e85e55;
+  background: #95FF4255;
   color: var(--green);
 }
 .gantt-bar.planned {
@@ -164,7 +164,7 @@
 .gantt-tooltip {
   position: fixed;
   background: var(--bg2);
-  border: 1px solid #ffffff15;
+  border: 1px solid var(--border);
   border-radius: 10px;
   padding: 16px;
   max-width: 280px;
@@ -221,7 +221,7 @@
   border-radius: 3px;
 }
 .gantt-legend-swatch.in_progress { background: var(--green); }
-.gantt-legend-swatch.done { background: #00e85e55; }
+.gantt-legend-swatch.done { background: #95FF4255; }
 .gantt-legend-swatch.planned {
   background: transparent;
   border: 1px dashed var(--text3);
