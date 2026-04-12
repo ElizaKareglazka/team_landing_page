@@ -3,7 +3,7 @@
    ═══════════════════════════════════════════ */
 
 .gantt {
-  margin-top: 48px;
+  margin-top: 32px;
   overflow-x: auto;
   position: relative;
   padding-bottom: 12px;
@@ -39,6 +39,7 @@
 /* ─── Rows ─── */
 .gantt-body {
   position: relative;
+  padding-top: 24px;
 }
 .gantt-row {
   display: flex;
@@ -118,26 +119,30 @@
   width: 2px;
   background: var(--green);
   opacity: 0.5;
-  z-index: 1;
+  z-index: 4;
   pointer-events: none;
 }
 .gantt-today::before {
   content: 'сегодня';
   position: absolute;
-  top: -22px;
+  top: 2px;
   left: 50%;
   transform: translateX(-50%);
   font-family: var(--mono);
   font-size: 9px;
-  color: var(--green);
+  color: var(--bg);
+  background: var(--green);
+  padding: 2px 6px;
+  border-radius: 4px;
   letter-spacing: 1px;
   text-transform: uppercase;
   white-space: nowrap;
+  opacity: 1;
 }
 .gantt-today::after {
   content: '';
   position: absolute;
-  top: -4px;
+  top: 20px;
   left: -3px;
   width: 8px;
   height: 8px;

@@ -63,7 +63,7 @@
   font-size: 18px;
   line-height: 1.7;
   max-width: 560px;
-  margin-bottom: 48px;
+  margin-bottom: 36px;
 }
 
 .hero-metrics { display: flex; gap: 48px; flex-wrap: wrap; }
@@ -82,7 +82,7 @@
 }
 
 .hero-cta {
-  margin-top: 56px;
+  margin-top: 40px;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -95,7 +95,7 @@
 .process-timeline {
   display: flex;
   gap: 0;
-  margin-top: 48px;
+  margin-top: 32px;
   position: relative;
   overflow-x: auto;
   padding-bottom: 16px;
@@ -144,7 +144,27 @@
 
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
-  .hero-metrics { gap: 32px; }
-  .process-timeline { flex-direction: column; gap: 24px; }
-  .process-step-line { width: 2px; height: 24px; margin-bottom: 12px; }
+  #hero {
+    min-height: auto;
+    padding-bottom: 60px;
+    text-align: center;
+    align-items: center;
+  }
+  .hero-tag { justify-content: center; }
+  .hero-h1 { font-size: clamp(28px, 8vw, 48px); letter-spacing: -1px; }
+  .hero-sub { font-size: 16px; margin-bottom: 24px; text-align: center; margin-left: auto; margin-right: auto; }
+  .hero-metrics { gap: 24px; justify-content: center; }
+  .metric { align-items: center; }
+  .metric-val { font-size: 24px; }
+  .hero-cta { margin-top: 32px; justify-content: center; }
+  .process-timeline { flex-direction: column; gap: 20px; }
+  .process-step { min-width: 0; text-align: center; }
+  .process-step-num { text-align: center; }
+  .process-step-line { width: 2px; height: 20px; margin: 0 auto 12px; }
+}
+
+@media (max-width: 480px) {
+  .hero-metrics { gap: 16px; }
+  .metric-val { font-size: 20px; }
+  .metric-label { font-size: 11px; }
 }

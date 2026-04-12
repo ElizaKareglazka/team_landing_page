@@ -295,7 +295,10 @@
     justify-content: center;
   }
   .admin-mode header {
-    top: 64px;
+    top: 58px;
+  }
+  .admin-mode nav {
+    top: 122px; /* 58px toolbar + 64px header */
   }
   .admin-mode #hero {
     padding-top: 128px;

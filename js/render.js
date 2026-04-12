@@ -50,7 +50,6 @@ function renderDirections(directions) {
   grid.innerHTML = directions
     .map((d, i) => `
       <div class="about-card reveal reveal-delay-${(i % 3) + 1}">
-        <div class="about-card-icon">${d.icon}</div>
         <h3>${d.title}</h3>
         <p>${d.desc}</p>
       </div>

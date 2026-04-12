@@ -194,6 +194,10 @@ function renderAdminControls() {
     ));
   });
 
+  // ── Tech Stack: edit list ──
+  const stackSection = document.getElementById('stack');
+  stackSection.appendChild(makeAdminBtn('Редактировать стек', () => showTechStackForm()));
+
   // ── FAQ: add + edit/delete per item ──
   const faqList = document.getElementById('faqList');
   faqList.appendChild(makeAdminBtn('+ Добавить вопрос', () => showFaqForm(null, -1)));
@@ -424,6 +428,23 @@ function showFaqForm(item, index) {
     const obj = { q: r.q, a: r.a };
     if (isNew) window.siteData.faq.push(obj);
     else window.siteData.faq[index] = obj;
+    refreshSite();
+  });
+}
+
+/* ─── Tech Stack CRUD ─── */
+function showTechStackForm() {
+  showFormModal('Редактирование стека технологий', [
+    {
+      key: 'stack',
+      label: 'Технологии (через запятую)',
+      type: 'textarea',
+      placeholder: 'Python, FastAPI, Docker, LLM, ...'
+    }
+  ], {
+    stack: window.siteData.techStack.join(', ')
+  }, (r) => {
+    window.siteData.techStack = r.stack.split(',').map(s => s.trim()).filter(Boolean);
     refreshSite();
   });
 }

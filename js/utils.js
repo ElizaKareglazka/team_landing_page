@@ -100,6 +100,22 @@ function initNavHighlight() {
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : '';
     });
   });
+
+  // Burger menu
+  const burger = document.getElementById('burger');
+  const nav = document.getElementById('mainNav');
+  if (burger && nav) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('active');
+      nav.classList.toggle('open');
+    });
+    navLinks.forEach(a => {
+      a.addEventListener('click', () => {
+        burger.classList.remove('active');
+        nav.classList.remove('open');
+      });
+    });
+  }
 }
 
 /**

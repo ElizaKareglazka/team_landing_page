@@ -28,6 +28,7 @@
 html {
   scroll-behavior: smooth;
   background: var(--bg);
+  overflow-x: hidden;
 }
 
 body {
@@ -70,7 +71,7 @@ a:hover { opacity: 0.8; }
 
 /* ─── Section Layout ─── */
 section {
-  padding: 120px 40px 80px;
+  padding: 80px 40px 40px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -125,6 +126,6 @@ section {
 /* ─── Responsive ─── */
 @media (max-width: 768px) {
   section {
-    padding: 80px 20px 60px;
+    padding: 60px 16px 32px;
   }
 }
