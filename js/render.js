@@ -96,7 +96,7 @@ function renderTeam(team) {
 }
 
 /**
- * Projects cards with expandable details
+ * Projects cards — click opens modal
  */
 function renderProjects(projects) {
   const grid = document.getElementById('projectsGrid');
@@ -105,7 +105,7 @@ function renderProjects(projects) {
   projects.forEach((p, i) => {
     const card = document.createElement('div');
     card.className = `project-card reveal reveal-delay-${(i % 3) + 1}`;
-    card.addEventListener('click', () => card.classList.toggle('expanded'));
+    card.addEventListener('click', () => openProjectModal(p));
 
     // Build cover content
     let coverContent;
@@ -119,7 +119,6 @@ function renderProjects(projects) {
     card.innerHTML = `
       <div class="project-cover">
         ${coverContent}
-        <div class="project-cover-label">${String(i + 1).padStart(2, '0')}</div>
       </div>
       <div class="project-body">
         <div class="project-tag">${p.tag}</div>
@@ -127,12 +126,6 @@ function renderProjects(projects) {
         <p>${p.desc}</p>
         <div class="project-stack">
           ${p.stack.map(s => `<span class="project-stack-tag">${s}</span>`).join('')}
-        </div>
-      </div>
-      <div class="project-detail">
-        <div class="project-detail-inner">
-          <h4>Задача</h4><p>${p.task}</p>
-          <h4>Результат</h4><p>${p.result}</p>
         </div>
       </div>
     `;

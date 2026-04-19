@@ -9,20 +9,20 @@
   left: 0;
   right: 0;
   z-index: 500;
-  background: linear-gradient(135deg, #2B2B2B, #1C1C1C);
+  background: linear-gradient(135deg, var(--bg2), var(--bg));
   border-bottom: 1px solid var(--green-dim);
   padding: 0 24px;
   height: 44px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 13px;
-  box-shadow: 0 2px 20px rgba(149, 255, 66, 0.08);
+  font-size: 14px;
+  box-shadow: 0 2px 20px var(--green-glow);
 }
 
 .admin-toolbar-badge {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--green);
   letter-spacing: 1px;
 }
@@ -84,12 +84,12 @@
 .admin-modal {
   background: var(--bg2);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 12px;
   width: 100%;
   max-width: 520px;
   max-height: 85vh;
   overflow-y: auto;
-  padding: 32px;
+  padding: 24px;
   transform: translateY(16px);
   transition: transform 0.25s;
 }
@@ -121,7 +121,7 @@
 }
 
 .admin-field label {
-  font-size: 11px;
+  font-size: 12px;
   font-family: var(--mono);
   color: var(--text3);
   letter-spacing: 1px;
@@ -133,7 +133,7 @@
 .admin-field select {
   width: 100%;
   padding: 10px 14px;
-  background: var(--bg3);
+  background: transparent;
   border: 1px solid var(--border);
   border-radius: 8px;
   color: var(--text);
@@ -171,8 +171,8 @@
 
 /* ─── Error ─── */
 .admin-error {
-  font-size: 13px;
-  color: #ff4444;
+  font-size: 14px;
+  color: var(--error);
   min-height: 20px;
   margin-top: 4px;
 }
@@ -189,7 +189,7 @@
   padding: 10px 24px;
   background: var(--green);
   color: var(--bg);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   border: none;
   border-radius: 8px;
@@ -224,7 +224,7 @@
   border: 1px dashed var(--green-dim);
   border-radius: 10px;
   color: var(--green);
-  font-size: 13px;
+  font-size: 14px;
   font-family: var(--mono);
   cursor: pointer;
   transition: all 0.2s;
@@ -273,8 +273,78 @@
   color: var(--green);
 }
 .admin-card-actions button.delete:hover {
-  border-color: #ff4444;
-  color: #ff4444;
+  border-color: var(--error);
+  color: var(--error);
+}
+
+/* ─── Subprojects in project form ─── */
+.admin-subprojects-section {
+  margin-top: 8px;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+}
+.admin-subprojects-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.admin-subproject-item {
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px;
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.admin-subproject-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.admin-subproject-header .admin-subproject-label {
+  font-size: 12px;
+  font-family: var(--mono);
+  color: var(--green);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.admin-sub-remove {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text3);
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  padding: 0;
+}
+.admin-sub-remove:hover {
+  border-color: var(--error);
+  color: var(--error);
+}
+.admin-btn-add-sub {
+  width: 100%;
+  padding: 10px;
+  background: transparent;
+  border: 1px dashed var(--green-dim);
+  border-radius: 8px;
+  color: var(--green);
+  font-size: 13px;
+  font-family: var(--mono);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.admin-btn-add-sub:hover {
+  background: var(--green-dim);
+  border-color: var(--green);
 }
 
 /* ─── Scrollbar for admin modal ─── */
@@ -304,6 +374,6 @@
     padding-top: 128px;
   }
   .admin-modal {
-    padding: 20px;
+    padding: 16px;
   }
 }

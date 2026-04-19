@@ -6,11 +6,11 @@
 .btn-primary {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  padding: 14px 32px;
+  gap: 8px;
+  padding: 12px 16px;
   background: var(--green);
   color: var(--bg);
-  font-weight: 700;
+  font-weight: 600;
   font-size: 14px;
   border: none;
   border-radius: 8px;
@@ -29,10 +29,10 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 14px 24px;
+  padding: 12px 16px;
   border: 1px solid var(--border);
   color: var(--text2);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 14px;
   border-radius: 8px;
   cursor: pointer;
@@ -54,13 +54,13 @@ header {
   z-index: 100;
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  background: rgba(28, 28, 28, 0.85);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--border-subtle);
 }
 .header-inner {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 0 40px;
+  padding: 0 32px;
   height: 64px;
   display: flex;
   align-items: center;
@@ -78,12 +78,12 @@ header {
   cursor: default;
   user-select: none;
 }
-.logo span { color: var(--text); font-weight: 300; }
+.logo span { color: var(--text); font-weight: 400; }
 
 nav { display: flex; gap: 32px; }
 nav a {
   color: var(--text2);
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
   letter-spacing: 0.5px;
   text-transform: uppercase;
@@ -106,6 +106,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 .about-card:hover {
   border-color: var(--green-dim);
@@ -163,7 +164,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   border: 1px solid var(--border-subtle);
   border-radius: 10px;
   font-family: var(--mono);
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text2);
   display: flex;
   align-items: center;
@@ -196,6 +197,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 .team-card:hover {
   border-color: var(--green-dim);
@@ -235,7 +237,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   color: var(--green);
 }
 
-.team-card-name { font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+.team-card-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
 .team-card-role {
   font-size: 12px;
   color: var(--text3);
@@ -243,7 +245,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   letter-spacing: 0.5px;
 }
 .team-card-hint {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text3);
   margin-top: 12px;
   opacity: 0;
@@ -272,12 +274,13 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .modal {
   background: var(--bg2);
-  border: 1px solid var(--border);
-  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
   max-width: 560px;
   width: 100%;
-  padding: 40px;
+  padding: 24px;
   position: relative;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   transform: translateY(20px);
   transition: transform 0.3s;
 }
@@ -329,9 +332,9 @@ nav a:hover { color: var(--green); opacity: 1; }
   font-weight: 700;
   color: var(--green);
 }
-.modal-name { font-size: 22px; font-weight: 700; }
+.modal-name { font-size: 24px; font-weight: 700; }
 .modal-role {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--green);
   font-family: var(--mono);
   margin-top: 4px;
@@ -339,10 +342,10 @@ nav a:hover { color: var(--green); opacity: 1; }
 
 .modal-section { margin-bottom: 20px; }
 .modal-section-title {
-  font-size: 11px;
+  font-size: 12px;
   color: var(--text3);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   font-family: var(--mono);
   margin-bottom: 10px;
 }
@@ -363,7 +366,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   padding: 8px 16px;
   border: 1px solid var(--border);
   border-radius: 8px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text2);
   transition: all 0.2s;
   display: flex;
@@ -387,6 +390,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 .project-card:hover {
   border-color: var(--green-dim);
@@ -410,10 +414,11 @@ nav a:hover { color: var(--green); opacity: 1; }
   position: absolute;
   inset: 0;
   opacity: 0.15;
+  color: var(--green);
 }
 .project-cover-label {
   font-family: var(--mono);
-  font-size: 32px;
+  font-size: 30px;
   font-weight: 700;
   color: var(--green);
   opacity: 0.3;
@@ -423,44 +428,104 @@ nav a:hover { color: var(--green); opacity: 1; }
 .project-body { padding: 24px; }
 .project-tag {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
   color: var(--green);
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 8px;
 }
-.project-body h3 { font-size: 17px; font-weight: 600; margin-bottom: 10px; }
-.project-body p { color: var(--text2); font-size: 14px; line-height: 1.6; margin-bottom: 16px; }
+.project-body h3 { font-size: 18px; font-weight: 600; margin-bottom: 10px; }
+.project-body p {
+  color: var(--text2);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 .project-stack { display: flex; flex-wrap: wrap; gap: 6px; }
 .project-stack-tag {
   padding: 3px 10px;
   background: var(--bg4);
   border-radius: 4px;
-  font-size: 11px;
+  font-size: 12px;
   font-family: var(--mono);
   color: var(--text3);
 }
 
-.project-detail {
-  max-height: 0;
+/* ─── Project Modal ─── */
+.project-modal {
+  max-width: 600px;
+  max-height: 90vh;
+  padding: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  display: flex;
+  flex-direction: column;
 }
-.project-card.expanded .project-detail { max-height: 300px; }
-.project-detail-inner {
-  padding: 0 24px 24px;
-  border-top: 1px solid var(--border-subtle);
-  padding-top: 16px;
+.project-modal-cover {
+  height: 120px;
+  background: var(--bg4);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.project-detail-inner h4 {
-  font-size: 13px;
-  font-weight: 600;
-  margin-bottom: 6px;
+.project-modal-cover .project-cover-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.15;
   color: var(--green);
 }
-.project-detail-inner p {
+.project-modal-body {
+  padding: 24px;
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+}
+.project-modal-body .project-tag {
+  margin-bottom: 8px;
+}
+.project-modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.project-modal-desc {
   color: var(--text2);
-  font-size: 13px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.project-modal-body .modal-section p a {
+  color: var(--green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.project-modal-body .modal-section p a:hover {
+  opacity: 0.8;
+}
+.project-modal .modal-close {
+  z-index: 1;
+}
+
+/* ─── Subprojects ─── */
+.subproject-section {
+  border-top: 1px solid var(--bg4);
+  padding-top: 20px;
+  margin-top: 20px;
+}
+.subproject-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.subproject-desc {
+  color: var(--text2);
+  font-size: 14px;
   line-height: 1.6;
   margin-bottom: 12px;
 }
@@ -484,7 +549,7 @@ nav a:hover { color: var(--green); opacity: 1; }
   justify-content: space-between;
   align-items: center;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 16px;
   transition: color 0.2s;
   user-select: none;
 }
@@ -511,11 +576,11 @@ nav a:hover { color: var(--green); opacity: 1; }
 /* ─── Footer ─── */
 footer {
   border-top: 1px solid var(--border-subtle);
-  padding: 40px 40px;
+  padding: 40px 32px;
   margin-top: 20px;
 }
 .footer-inner {
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
@@ -525,10 +590,10 @@ footer {
 }
 .footer-left { display: flex; flex-direction: column; gap: 8px; }
 .footer-brand { font-family: var(--mono); font-weight: 700; font-size: 16px; color: var(--green); }
-.footer-copy { font-size: 13px; color: var(--text3); }
+.footer-copy { font-size: 12px; color: var(--text3); }
 .footer-links { display: flex; gap: 24px; }
 .footer-link {
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text2);
   display: flex;
   align-items: center;
@@ -536,6 +601,34 @@ footer {
   transition: color 0.2s;
 }
 .footer-link:hover { color: var(--green); }
+
+/* ─── Theme Toggle ─── */
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text2);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  flex-shrink: 0;
+}
+.theme-toggle:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+.theme-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+.theme-icon-moon { display: none; }
+.theme-icon-sun { display: block; }
+[data-theme="light"] .theme-icon-sun { display: none; }
+[data-theme="light"] .theme-icon-moon { display: block; }
 
 /* ─── Burger Menu ─── */
 .burger {
@@ -572,12 +665,13 @@ footer {
 @media (max-width: 768px) {
   /* Burger toggle */
   .burger { display: flex; }
+  .theme-toggle { margin-left: auto; margin-right: 8px; }
   nav {
     position: fixed;
     top: 64px;
     left: 0;
     right: 0;
-    background: rgba(28, 28, 28, 0.97);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
@@ -608,7 +702,7 @@ footer {
   .team-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
   .team-card { padding: 20px 16px; }
   .projects-grid { grid-template-columns: 1fr; }
-  .modal { padding: 24px; }
+  .modal { padding: 20px; }
   footer { padding: 24px 16px; }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-links { justify-content: center; }
@@ -626,8 +720,8 @@ footer {
   .about-grid { grid-template-columns: 1fr; }
   .team-grid { grid-template-columns: repeat(2, 1fr); }
   .team-card-photo { width: 56px; height: 56px; }
-  .team-card-name { font-size: 13px; }
-  .team-card-role { font-size: 10px; }
+  .team-card-name { font-size: 12px; }
+  .team-card-role { font-size: 12px; }
   .hero-cta { flex-direction: column; gap: 12px; }
   .hero-cta .btn-primary,
   .hero-cta .btn-ghost { width: 100%; justify-content: center; }

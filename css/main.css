@@ -2,7 +2,7 @@
    main.css — Variables, Reset, Base Styles
    ═══════════════════════════════════════════ */
 
-/* ─── CSS Variables ─── */
+/* ─── CSS Variables (Dark — default) ─── */
 :root {
   --bg: #1C1C1C;
   --bg2: #2B2B2B;
@@ -18,8 +18,39 @@
   --border: #484848;
   --border-subtle: #363636;
   --text-on-brand: #1C1C1C;
-  --sans: 'Inter', sans-serif;
-  --mono: 'Inter', sans-serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --mono: 'Inter', system-ui, sans-serif;
+  /* Theme-switchable */
+  --header-bg: rgba(28, 28, 28, 0.85);
+  --nav-bg: rgba(28, 28, 28, 0.97);
+  --focus-ring: rgba(149, 255, 66, 0.5);
+  --gantt-done: rgba(149, 255, 66, 0.33);
+  --error: #F04438;
+  --error-text: #F97066;
+}
+
+/* ─── Light Theme ─── */
+[data-theme="light"] {
+  --bg: #FFFFFF;
+  --bg2: #FAFAF9;
+  --bg3: #FAFAF9;
+  --bg4: #F5F5F4;
+  --green: #497D00;
+  --green-dim: rgba(73, 125, 0, 0.12);
+  --green-glow: rgba(73, 125, 0, 0.06);
+  --green-hover: #3D6A00;
+  --text: #0C0A09;
+  --text2: #44403C;
+  --text3: #78716C;
+  --border: #E7E5E4;
+  --border-subtle: #E7E5E4;
+  --text-on-brand: #F7FEE7;
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --nav-bg: rgba(255, 255, 255, 0.97);
+  --focus-ring: rgba(73, 125, 0, 0.5);
+  --gantt-done: rgba(73, 125, 0, 0.25);
+  --error: #B42318;
+  --error-text: #B42318;
 }
 
 /* ─── Reset ─── */
@@ -75,16 +106,16 @@ a:hover { opacity: 0.8; }
 
 /* ─── Section Layout ─── */
 section {
-  padding: 80px 40px 40px;
-  max-width: 1200px;
+  padding: 80px 32px 40px;
+  max-width: 1280px;
   margin: 0 auto;
 }
 
 .section-label {
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 12px;
   color: var(--green);
-  letter-spacing: 3px;
+  letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 12px;
   display: flex;
@@ -99,8 +130,8 @@ section {
 }
 
 .section-title {
-  font-size: clamp(28px, 4vw, 42px);
-  font-weight: 700;
+  font-size: clamp(30px, 4vw, 36px);
+  font-weight: 600;
   letter-spacing: -1px;
   line-height: 1.15;
   margin-bottom: 24px;
@@ -111,6 +142,17 @@ section {
   font-size: 16px;
   line-height: 1.7;
   max-width: 600px;
+}
+
+/* ─── Focus Rings ─── */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: none;
+  border-color: var(--green);
+  box-shadow: 0 0 0 3px var(--focus-ring);
 }
 
 /* ─── Animations ─── */
@@ -131,5 +173,9 @@ section {
 @media (max-width: 768px) {
   section {
     padding: 60px 16px 32px;
+  }
+  button:focus-visible,
+  a:focus-visible {
+    box-shadow: 0 0 0 2px var(--focus-ring);
   }
 }

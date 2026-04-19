@@ -361,30 +361,106 @@ function showTeamForm(member, index) {
 }
 
 /* ─── Projects CRUD ─── */
+function buildSubprojectHTML(sp) {
+  return `
+    <div class="admin-subproject-item">
+      <div class="admin-subproject-header">
+        <span class="admin-subproject-label">Подпроект</span>
+        <button type="button" class="admin-sub-remove" title="Удалить подпроект">✕</button>
+      </div>
+      <div class="admin-field"><label>Название</label><input type="text" data-sub="title" value="${(sp.title || '').replace(/"/g, '&quot;')}"></div>
+      <div class="admin-field"><label>Описание</label><textarea data-sub="desc">${sp.desc || ''}</textarea></div>
+      <div class="admin-field"><label>Задача</label><textarea data-sub="task">${sp.task || ''}</textarea></div>
+      <div class="admin-field"><label>Результат</label><textarea data-sub="result">${sp.result || ''}</textarea></div>
+    </div>
+  `;
+}
+
 function showProjectForm(project, index) {
   const isNew = index === -1;
-  const v = project || { tag: '', title: '', desc: '', cover: '', stack: [], task: '', result: '', pattern: '' };
-  showFormModal(isNew ? 'Добавить проект' : 'Редактировать проект', [
-    { key: 'tag', label: 'Категория / тег', placeholder: 'API, Портал, Логистика...' },
-    { key: 'title', label: 'Название' },
-    { key: 'desc', label: 'Краткое описание', type: 'textarea' },
-    { key: 'cover', label: 'Путь к обложке', placeholder: 'assets/projects/name.png (необязательно)' },
-    { key: 'stack', label: 'Стек технологий', placeholder: 'Go, React, Redis (через запятую)' },
-    { key: 'task', label: 'Задача', type: 'textarea' },
-    { key: 'result', label: 'Результат', type: 'textarea' },
-    { key: 'pattern', label: 'SVG-паттерн', placeholder: 'portal, api, logistics, bi, cicd, integration' },
-  ], {
-    tag: v.tag, title: v.title, desc: v.desc, cover: v.cover,
-    stack: v.stack.join(', '), task: v.task, result: v.result, pattern: v.pattern,
-  }, (r) => {
+  const v = project || { tag: '', title: '', desc: '', cover: '', stack: [], task: '', result: '', pattern: '', subprojects: [] };
+  const subs = v.subprojects || [];
+
+  const overlay = document.createElement('div');
+  overlay.className = 'admin-overlay';
+  overlay.innerHTML = `
+    <div class="admin-modal">
+      <div class="admin-modal-title">${isNew ? 'Добавить проект' : 'Редактировать проект'}</div>
+      <div class="admin-form">
+        <div class="admin-field"><label>Категория / тег</label><input type="text" data-key="tag" value="${(v.tag || '').replace(/"/g, '&quot;')}" placeholder="API, Портал, Логистика..."></div>
+        <div class="admin-field"><label>Название</label><input type="text" data-key="title" value="${(v.title || '').replace(/"/g, '&quot;')}"></div>
+        <div class="admin-field"><label>Краткое описание</label><textarea data-key="desc">${v.desc || ''}</textarea></div>
+        <div class="admin-field"><label>Путь к обложке</label><input type="text" data-key="cover" value="${(v.cover || '').replace(/"/g, '&quot;')}" placeholder="assets/projects/name.png (необязательно)"></div>
+        <div class="admin-field"><label>Стек технологий</label><input type="text" data-key="stack" value="${v.stack.join(', ')}" placeholder="Go, React, Redis (через запятую)"></div>
+        <div class="admin-field"><label>Задача</label><textarea data-key="task">${v.task || ''}</textarea></div>
+        <div class="admin-field"><label>Результат</label><textarea data-key="result">${v.result || ''}</textarea></div>
+        <div class="admin-field"><label>SVG-паттерн</label><input type="text" data-key="pattern" value="${(v.pattern || '').replace(/"/g, '&quot;')}" placeholder="portal, api, logistics, bi, cicd, integration"></div>
+        <div class="admin-subprojects-section">
+          <div class="admin-subprojects-title">Подпроекты</div>
+          <div id="adminSubprojectsList">${subs.map(sp => buildSubprojectHTML(sp)).join('')}</div>
+          <button type="button" class="admin-btn-add-sub" id="adminAddSubproject">+ Добавить подпроект</button>
+        </div>
+      </div>
+      <div class="admin-form-actions">
+        <button class="admin-btn-cancel">Отмена</button>
+        <button class="admin-btn-save">Сохранить</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(overlay);
+  requestAnimationFrame(() => overlay.classList.add('active'));
+
+  // Remove handlers for existing subprojects
+  overlay.querySelectorAll('.admin-sub-remove').forEach(btn => {
+    btn.addEventListener('click', () => btn.closest('.admin-subproject-item').remove());
+  });
+
+  // Add subproject
+  document.getElementById('adminAddSubproject').addEventListener('click', () => {
+    const list = document.getElementById('adminSubprojectsList');
+    const wrapper = document.createElement('div');
+    wrapper.innerHTML = buildSubprojectHTML({ title: '', desc: '', task: '', result: '' });
+    const item = wrapper.firstElementChild;
+    list.appendChild(item);
+    item.querySelector('.admin-sub-remove').addEventListener('click', () => item.remove());
+    item.querySelector('input').focus();
+  });
+
+  // Close
+  const close = () => overlay.remove();
+  overlay.querySelector('.admin-btn-cancel').addEventListener('click', close);
+  overlay.addEventListener('click', e => { if (e.target === overlay) close(); });
+  document.addEventListener('keydown', function esc(e) {
+    if (e.key === 'Escape') { close(); document.removeEventListener('keydown', esc); }
+  });
+
+  // Save
+  overlay.querySelector('.admin-btn-save').addEventListener('click', () => {
     const obj = {
-      tag: r.tag, title: r.title, desc: r.desc, cover: r.cover,
-      stack: r.stack.split(',').map(s => s.trim()).filter(Boolean),
-      task: r.task, result: r.result, pattern: r.pattern,
+      tag: overlay.querySelector('[data-key="tag"]').value,
+      title: overlay.querySelector('[data-key="title"]').value,
+      desc: overlay.querySelector('[data-key="desc"]').value,
+      cover: overlay.querySelector('[data-key="cover"]').value,
+      stack: overlay.querySelector('[data-key="stack"]').value.split(',').map(s => s.trim()).filter(Boolean),
+      task: overlay.querySelector('[data-key="task"]').value,
+      result: overlay.querySelector('[data-key="result"]').value,
+      pattern: overlay.querySelector('[data-key="pattern"]').value,
     };
+
+    const subItems = overlay.querySelectorAll('.admin-subproject-item');
+    if (subItems.length > 0) {
+      obj.subprojects = Array.from(subItems).map(item => ({
+        title: item.querySelector('[data-sub="title"]').value,
+        desc: item.querySelector('[data-sub="desc"]').value,
+        task: item.querySelector('[data-sub="task"]').value,
+        result: item.querySelector('[data-sub="result"]').value,
+      }));
+    }
+
     if (isNew) window.siteData.projects.push(obj);
     else window.siteData.projects[index] = obj;
     refreshSite();
+    close();
   });
 }
 

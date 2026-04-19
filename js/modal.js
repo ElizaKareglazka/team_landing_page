@@ -54,3 +54,60 @@ document.getElementById('modalClose').addEventListener('click', closeModal);
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeModal();
 });
+
+/* ─── Project Modal ─── */
+const projectModalOverlay = document.getElementById('projectModalOverlay');
+
+function openProjectModal(project) {
+  // Hide cover
+  document.getElementById('projectModalCover').style.display = 'none';
+
+  document.getElementById('projectModalTag').textContent = project.tag;
+  document.getElementById('projectModalTitle').textContent = project.title;
+  document.getElementById('projectModalDesc').textContent = project.desc;
+  document.getElementById('projectModalTask').textContent = project.task;
+  document.getElementById('projectModalResult').innerHTML = project.result;
+
+  // Subprojects
+  const subContainer = document.getElementById('projectModalSubprojects');
+  if (project.subprojects && project.subprojects.length > 0) {
+    subContainer.innerHTML = project.subprojects
+      .map(sp => `
+        <div class="subproject-section">
+          <h4 class="subproject-title">${sp.title}</h4>
+          <p class="subproject-desc">${sp.desc}</p>
+          <div class="modal-section">
+            <div class="modal-section-title">Задача</div>
+            <p>${sp.task}</p>
+          </div>
+          <div class="modal-section">
+            <div class="modal-section-title">Результат</div>
+            <p>${sp.result}</p>
+          </div>
+        </div>
+      `)
+      .join('');
+  } else {
+    subContainer.innerHTML = '';
+  }
+
+  document.getElementById('projectModalStack').innerHTML = project.stack
+    .map(s => `<span class="modal-tag">${s}</span>`)
+    .join('');
+
+  projectModalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProjectModal() {
+  projectModalOverlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+projectModalOverlay.addEventListener('click', e => {
+  if (e.target === projectModalOverlay) closeProjectModal();
+});
+document.getElementById('projectModalClose').addEventListener('click', closeProjectModal);
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeProjectModal();
+});

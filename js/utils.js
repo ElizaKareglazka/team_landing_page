@@ -55,14 +55,31 @@ const icons = {
  * SVG patterns for project covers (fallback)
  */
 const coverPatterns = {
-  portal: `<svg width="100%" height="100%" opacity=".3"><defs><pattern id="pp" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="#00e85e" opacity=".15"/></pattern></defs><rect width="100%" height="100%" fill="url(#pp)"/></svg>`,
-  logistics: `<svg width="100%" height="100%" opacity=".3"><line x1="10%" y1="80%" x2="30%" y2="30%" stroke="#00e85e" stroke-width="2"/><line x1="30%" y1="30%" x2="50%" y2="60%" stroke="#00e85e" stroke-width="2"/><line x1="50%" y1="60%" x2="70%" y2="20%" stroke="#00e85e" stroke-width="2"/><line x1="70%" y1="20%" x2="90%" y2="50%" stroke="#00e85e" stroke-width="2"/></svg>`,
-  api: `<svg width="100%" height="100%" opacity=".3"><circle cx="50%" cy="50%" r="30" stroke="#00e85e" stroke-width="1.5" fill="none"/><line x1="50%" y1="20%" x2="50%" y2="80%" stroke="#00e85e" stroke-width="1"/><line x1="20%" y1="50%" x2="80%" y2="50%" stroke="#00e85e" stroke-width="1"/></svg>`,
-  bi: `<svg width="100%" height="100%" opacity=".3"><rect x="15%" y="60%" width="12%" height="30%" fill="#00e85e" opacity=".3"/><rect x="32%" y="40%" width="12%" height="50%" fill="#00e85e" opacity=".3"/><rect x="49%" y="25%" width="12%" height="65%" fill="#00e85e" opacity=".3"/><rect x="66%" y="50%" width="12%" height="40%" fill="#00e85e" opacity=".3"/></svg>`,
-  cicd: `<svg width="100%" height="100%" opacity=".3"><circle cx="20%" cy="50%" r="12" stroke="#00e85e" stroke-width="1.5" fill="none"/><line x1="27%" y1="50%" x2="43%" y2="50%" stroke="#00e85e" stroke-width="1.5"/><circle cx="50%" cy="50%" r="12" stroke="#00e85e" stroke-width="1.5" fill="none"/><line x1="57%" y1="50%" x2="73%" y2="50%" stroke="#00e85e" stroke-width="1.5"/><circle cx="80%" cy="50%" r="12" stroke="#00e85e" stroke-width="1.5" fill="none"/></svg>`,
-  integration: `<svg width="100%" height="100%" opacity=".3"><defs><pattern id="pi" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M0 15h30M15 0v30" stroke="#00e85e" stroke-width=".5"/></pattern></defs><rect width="100%" height="100%" fill="url(#pi)"/></svg>`,
-  default: `<svg width="100%" height="100%" opacity=".2"><defs><pattern id="pd" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="#00e85e"/></pattern></defs><rect width="100%" height="100%" fill="url(#pd)"/></svg>`
+  portal: `<svg width="100%" height="100%" opacity=".3"><defs><pattern id="pp" width="40" height="40" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="currentColor" opacity=".15"/></pattern></defs><rect width="100%" height="100%" fill="url(#pp)"/></svg>`,
+  logistics: `<svg width="100%" height="100%" opacity=".3"><line x1="10%" y1="80%" x2="30%" y2="30%" stroke="currentColor" stroke-width="2"/><line x1="30%" y1="30%" x2="50%" y2="60%" stroke="currentColor" stroke-width="2"/><line x1="50%" y1="60%" x2="70%" y2="20%" stroke="currentColor" stroke-width="2"/><line x1="70%" y1="20%" x2="90%" y2="50%" stroke="currentColor" stroke-width="2"/></svg>`,
+  api: `<svg width="100%" height="100%" opacity=".3"><circle cx="50%" cy="50%" r="30" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="50%" y1="20%" x2="50%" y2="80%" stroke="currentColor" stroke-width="1"/><line x1="20%" y1="50%" x2="80%" y2="50%" stroke="currentColor" stroke-width="1"/></svg>`,
+  bi: `<svg width="100%" height="100%" opacity=".3"><rect x="15%" y="60%" width="12%" height="30%" fill="currentColor" opacity=".3"/><rect x="32%" y="40%" width="12%" height="50%" fill="currentColor" opacity=".3"/><rect x="49%" y="25%" width="12%" height="65%" fill="currentColor" opacity=".3"/><rect x="66%" y="50%" width="12%" height="40%" fill="currentColor" opacity=".3"/></svg>`,
+  cicd: `<svg width="100%" height="100%" opacity=".3"><circle cx="20%" cy="50%" r="12" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="27%" y1="50%" x2="43%" y2="50%" stroke="currentColor" stroke-width="1.5"/><circle cx="50%" cy="50%" r="12" stroke="currentColor" stroke-width="1.5" fill="none"/><line x1="57%" y1="50%" x2="73%" y2="50%" stroke="currentColor" stroke-width="1.5"/><circle cx="80%" cy="50%" r="12" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>`,
+  integration: `<svg width="100%" height="100%" opacity=".3"><defs><pattern id="pi" width="30" height="30" patternUnits="userSpaceOnUse"><path d="M0 15h30M15 0v30" stroke="currentColor" stroke-width=".5"/></pattern></defs><rect width="100%" height="100%" fill="url(#pi)"/></svg>`,
+  default: `<svg width="100%" height="100%" opacity=".2"><defs><pattern id="pd" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="currentColor"/></pattern></defs><rect width="100%" height="100%" fill="url(#pd)"/></svg>`
 };
+
+/**
+ * Theme toggle — dark/light
+ * Theme is applied from inline <head> script to prevent flash.
+ * This function only wires up the toggle button.
+ */
+function initThemeToggle() {
+  const btn = document.getElementById('themeToggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  }
+}
 
 /**
  * Initialize scroll reveal observer

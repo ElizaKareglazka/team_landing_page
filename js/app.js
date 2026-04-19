@@ -22,6 +22,7 @@
     requestAnimationFrame(() => {
       initScrollReveal();
       initNavHighlight();
+      initThemeToggle();
       initAdmin();
     });
 
