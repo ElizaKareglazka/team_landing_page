@@ -9,7 +9,7 @@
   gap: 8px;
   padding: 12px 16px;
   background: var(--green);
-  color: var(--bg);
+  color: var(--text-on-brand);
   font-weight: 600;
   font-size: 14px;
   border: none;
@@ -20,6 +20,7 @@
   letter-spacing: 0.3px;
 }
 .btn-primary:hover {
+  background: var(--green-hover);
   box-shadow: 0 0 30px var(--green-dim);
   transform: translateY(-1px);
 }
@@ -100,13 +101,13 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .about-card {
   background: var(--bg3);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 32px 28px;
   transition: all 0.3s;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-xs);
 }
 .about-card:hover {
   border-color: var(--green-dim);
@@ -190,19 +191,19 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .team-card {
   background: var(--bg3);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border);
   border-radius: 12px;
   padding: 24px 20px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-xs);
 }
 .team-card:hover {
-  border-color: var(--green-dim);
+  border-color: var(--green);
   transform: translateY(-3px);
-  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--shadow-elevated);
 }
 .team-card-photo {
   width: 72px;
@@ -274,13 +275,13 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .modal {
   background: var(--bg2);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border);
   border-radius: 12px;
   max-width: 560px;
   width: 100%;
   padding: 24px;
   position: relative;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-elevated);
   transform: translateY(20px);
   transition: transform 0.3s;
 }
@@ -384,17 +385,18 @@ nav a:hover { color: var(--green); opacity: 1; }
 }
 .project-card {
   background: var(--bg3);
-  border: 1px solid var(--border-subtle);
+  border: 1px solid var(--border);
   border-radius: 12px;
   overflow: hidden;
   cursor: pointer;
   transition: all 0.3s;
   position: relative;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow-xs);
 }
 .project-card:hover {
-  border-color: var(--green-dim);
+  border-color: var(--green);
   transform: translateY(-2px);
+  box-shadow: var(--shadow-elevated);
 }
 .project-cover {
   height: 160px;
